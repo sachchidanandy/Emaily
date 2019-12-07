@@ -1,0 +1,5 @@
+# Rename the file from ExampleEnv to .env And add required Credentials
+# Google OAuth Credentials
+GOOGLE_CLIENT_ID='xxxxxxxxxxxxxxxxxx'
+GOOGLE_CLIENT_SECRET='xxxxxxxxxxxxxx'
+GOOGLE_OAUTH_CALLBACK_URL='CALL BACK URL'
