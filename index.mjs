@@ -13,6 +13,7 @@ import { INTERNAL_SERVER_ERROR } from './lib/constants/statusCode';
 import { SOMETHING_BROKE } from './lib/constants/errorResponse';
 import socketio from 'socket.io';
 import session from 'express-session';
+import bodyParser from 'body-parser';
 
 const app = express();
 
@@ -34,6 +35,9 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
+
+// Add body parser middleware
+app.use(bodyParser.json());
 
 // Register Routes
 app.use('/api',routers);
