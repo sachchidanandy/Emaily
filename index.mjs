@@ -42,6 +42,16 @@ app.use(bodyParser.json());
 // Register Routes
 app.use('/api',routers);
 
+// Only in production to render statis assets
+if (process.env.NODE_ENV === 'production') {
+    // Render assets
+    app.use(express.static('client/build'));
+
+    // Render index.html
+    app.use('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client/build/index.html'));
+    });
+}
 // Add error handler middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
