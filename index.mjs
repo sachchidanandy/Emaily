@@ -8,7 +8,7 @@ import express from 'express';
 import http from 'http';
 import { ENV, PORT, SESSION_SECRET } from './lib/config';
 import routers from './lib/routes';
-import connectDB from './lib/config/connectDB';
+import connectDB from './lib/services/connectDB';
 import { INTERNAL_SERVER_ERROR } from './lib/constants/statusCode';
 import { SOMETHING_BROKE } from './lib/constants/errorResponse';
 import socketio from 'socket.io';
