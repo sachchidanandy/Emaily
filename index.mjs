@@ -55,7 +55,7 @@ if (process.env.NODE_ENV === 'production') {
 // Add error handler middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
-    res.status(INTERNAL_SERVER_ERROR).json({SOMETHING_BROKE});
+    res.status(INTERNAL_SERVER_ERROR).json(SOMETHING_BROKE);
 });
 
 httpServer.listen(PORT, () => {
